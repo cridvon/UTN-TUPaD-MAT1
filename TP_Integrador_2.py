@@ -212,12 +212,18 @@ while seccion != 0:
         continue
 
     if seccion == 1:
-        # 1. Ingreso de los DNIs (reales o ficticios).
-        #region Pedir al usuario la cantidad de DNIs que va a ingresar
-        cantidad = int(input("¿Cuántos DNI vas a ingresar?: "))
-        lista_dni = []
-        #endregion
+    # 1. Ingreso de los DNIs (reales o ficticios).
+    #region Pedir al usuario la cantidad de DNIs que va a ingresar
+        while True:
+            entrada = input("¿Cuántos DNI vas a ingresar?: ")
+            if entrada.isdigit():
+                cantidad = int(entrada)
+                break
+            else:
+                print("Por favor, ingresá solo números enteros.")
 
+        lista_dni = []
+    #endregion
         #region Pedir los DNIs al usuario
         for i in range (cantidad):
             dni = input("Por favor, ingrese un número de DNI: ")
