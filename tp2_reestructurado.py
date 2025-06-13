@@ -131,6 +131,7 @@ def solicitar_fechas():
     """
     cantidad = 4
     fechas = []
+    print("Debe ingresar 4 fechas diferentes.")
     for i in range(cantidad):
         fecha = input(f"Ingrese año de nacimiento N° {i+1}: ")
         # Se valida la fecha ingresada
@@ -143,7 +144,7 @@ def validar_fecha(fecha, i):
     while True:
         try:
             entrada = int(fecha)
-            if entrada > 0:
+            if entrada > 0 and entrada <= datetime.now().year:
                 return entrada
             else:
                 print("Ingresó un valor incorrecto")
