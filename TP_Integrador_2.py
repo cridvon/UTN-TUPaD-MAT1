@@ -162,16 +162,10 @@ def anio_bisiesto(fechas):
 
 # 5. Implementar una función para determinar si un año es bisiesto.
 #region Funcion que determina si una fecha específica es año bisiesto            
-def es_bisiesto(fecha):
-    if fecha % 4 == 0:
-        if fecha % 100 != 0:
-            return 1
-        elif fecha % 400 == 0:
-            return 1
-        else:
-            return 0
-    else:
-        return 0
+def es_bisiesto(anio):
+    if (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0):
+        return 1
+    return 0
 #endregion 
 
 
@@ -337,7 +331,10 @@ while seccion != 0:
         print("-"*thickness*5)
         print(f"| » {grupoz}".ljust((thickness*5))+"|")
         print("-"*thickness*5)
-        print(f"| » Tenemos un año especial (bisiesto)".ljust((thickness*5))+"|" if {hay_bisiesto >0} else "| » No hay año bisiesto".ljust((thickness*5))+"|")
+        if hay_bisiesto > 0:
+            print(f"| » Tenemos un año especial (bisiesto)".ljust((thickness*5))+"|")
+        else:
+            print(f"| » No hay año bisiesto".ljust((thickness*5))+"|")
         print("-"*thickness*5)
         print(f"| » El producto cartesiano del conjunto formado por las fechas con el conjunto formado por las edades actuales es: ".ljust((thickness*5))+"|")
         print("-"*thickness*5)
