@@ -104,6 +104,7 @@ def hay_nucleo_compartido(lista_conjuntos):
 # 1. Ingreso de los años de nacimiento (Si dos o mas integrantes del grupo tienen el mismo año, ingresar algún dato ficticio, según el caso).
 #region Ingreso de Fechas
 def solicitar_fechas():
+    print("Es necesario que ingrese 4 fechas diferentes.")
     cantidad=4
     fechas=[]
     for i in range(cantidad):
@@ -294,7 +295,7 @@ while seccion != 0:
                 hay_nucleo_compartido(conjuntos_dni)
 
             if opcion == 0:
-                print("Saliendo del programa...")   
+                print("Volviendo al menu inicial...")   
 
             input("Presione Enter para continuar...")
             limpiar_pantalla()
