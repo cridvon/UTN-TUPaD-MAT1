@@ -131,6 +131,7 @@ def solicitar_fechas():
     """
     cantidad = 4
     fechas = []
+    print("Debe ingresar 4 fechas diferentes.")
     for i in range(cantidad):
         fecha = input(f"Ingrese año de nacimiento N° {i+1}: ")
         # Se valida la fecha ingresada
@@ -142,8 +143,9 @@ def validar_fecha(fecha, i):
     """Función que valida la fecha ingresada por el usuario"""
     while True:
         try:
+            anio_actual = datetime.now().year
             entrada = int(fecha)
-            if entrada > 0:
+            if entrada > 0 and entrada <= datetime.now().year:
                 return entrada
             else:
                 print("Ingresó un valor incorrecto")
@@ -235,13 +237,18 @@ def procesar_parte_a():
             break
         else:
             print("Por favor, ingresá solo números enteros.")
-
-    lista_dni = []
     
     # Pedir los DNIs al usuario
+    lista_dni = []
     for i in range(cantidad):
-        dni = input("Por favor, ingrese un número de DNI: ")
-        lista_dni.append(dni)   
+        while True:
+            dni = input("Por favor, ingrese un número de DNI: ")
+            if dni.isdigit() and 7 <= len(dni) <= 8:
+                lista_dni.append(dni)
+                break
+            else:
+                print("DNI inválido. Debe ser un número de 7 u 8 dígitos.")
+
     print(f"Los DNI ingresados son: {lista_dni}")
 
     # 2. Generación automática de los conjuntos de dígitos únicos.
