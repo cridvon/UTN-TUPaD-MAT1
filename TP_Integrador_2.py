@@ -83,9 +83,9 @@ def union_conjuntos_total(lista_de_conjuntos):
         union_total = union_total.union(conjunto)
     
     if len(union_total) > 6:
-        resultado = "Conjunto global diverso, la unión de todos los conjuntos tiene más de 6 elementos distintos: "
+        resultado = "Conjunto global diverso. La unión de todos los conjuntos tiene más de 6 elementos distintos: "
     else:
-        resultado = "Conjunto global no diverso la unión de todos los conjuntos NO tiene más de 6 elementos distintos: "
+        resultado = "Conjunto global no diverso. La unión de todos los conjuntos NO tiene más de 6 elementos distintos: "
     print(f"{resultado}{union_total}")
 
 # B - Si hay al menos un número común a todos los conjuntos, entonces se considera que hay un núcleo compartido
